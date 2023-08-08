@@ -35,7 +35,7 @@ def get_user(
 ):
     record = queries.get_user(user_id)
     if record is None:
-        raise HTTPException(status_code=404, detail="No truck found with id {}".format(user_id))
+        raise HTTPException(status_code=404, detail="No user found with id {}".format(user_id))
     else:
         return record
 
