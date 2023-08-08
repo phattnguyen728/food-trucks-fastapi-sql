@@ -11,6 +11,7 @@ from queries.users import UserQueries, UserListOut, UserOut, UserIn
 # 
 # Resources
 # routers.trucks example
+# users.queries
 # docs page (at http://localhost:8000/docs#)
 # Notion: https://marbled-particle-5cf.notion.site/FastAPI-2eee765c870245ab9f28a3ef5456a981?pvs=4
 # take note of endpoints best practices
