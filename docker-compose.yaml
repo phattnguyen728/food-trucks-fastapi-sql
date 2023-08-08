@@ -1,0 +1,26 @@
+volumes:
+  foodies:
+    external: true
+services:
+  api:
+    build:
+      context: api
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./api:/app
+    environment:
+      DATABASE_URL: postgresql://foodies:foodies@db/foodies
+  db:
+    build:
+      context: data
+      dockerfile: Dockerfile.dev
+    volumes:
+      - foodies:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: foodies
+      POSTGRES_USER: foodies
+      POSTGRES_DB: foodies
+    ports:
+      - "15432:5432"
